@@ -1,16 +1,200 @@
-# React + Vite
+# 🍔 React Fast Food Ordering App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple interactive fast-food ordering application built with **React, Vite, and Bootstrap**.  
+The app demonstrates core React concepts such as **state management, props, component composition, and UI interactivity**.
 
-Currently, two official plugins are available:
+Users can browse menu items, add them to an order, adjust quantities, and see the total price update # 🍔 React Fast Food Ordering App
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![React](https://img.shields.io/badge/React-19-blue)
+![Vite](https://img.shields.io/badge/Vite-Build%20Tool-purple)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-blueviolet)
+![License](https://img.shields.io/badge/License-Educational-lightgrey)
 
-## React Compiler
+A simple **interactive fast-food ordering application** built with **React, Vite, and Bootstrap**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The application allows users to browse menu items, add them to an order, adjust quantities, and see the **total price update dynamically**. It also includes a **dark/light theme toggle** and demonstrates core React concepts such as **state management, props, and component-based architecture**.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# 🚀 Live Demo
+
+*(Add your deployed link later if you deploy it)*
+
+Example:
+
+```
+https://your-fastfood-app.netlify.app
+```
+
+---
+
+# 📸 Application Preview
+
+*(Add screenshots later)*
+
+Example structure:
+
+```
+screenshots/
+   menu.png
+   order-summary.png
+   dark-mode.png
+```
+
+Then in README you can display them:
+
+```markdown
+![Menu](screenshots/menu.png)
+![Order Summary](screenshots/order-summary.png)
+```
+
+---
+
+# ✨ Features
+
+✔ Display fast-food menu items  
+✔ Add items to order/cart  
+✔ Increase or decrease item quantities  
+✔ Automatic total price calculation  
+✔ Dark / Light theme toggle  
+✔ Responsive layout using Bootstrap grid  
+✔ Clean component-based architecture  
+
+---
+
+# 🛠 Technologies
+
+- **React**
+- **Vite**
+- **Bootstrap 5**
+- **JavaScript (ES6+)**
+- **CSS**
+
+---
+
+# 📦 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/yourusername/react-fastfood-ordering-app.git
+```
+
+Navigate to the project folder
+
+```bash
+cd react-fastfood-ordering-app
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Start development server
+
+```bash
+npm run dev
+```
+
+Open in browser
+
+```
+http://localhost:5173
+```
+
+---
+
+# 📁 Project Structure
+
+```
+src
+│
+├── components
+│   ├── Header.jsx
+│   ├── ThemeToggle.jsx
+│   ├── MenuList.jsx
+│   ├── FoodCard.jsx
+│   ├── OrderSummary.jsx
+│   └── OrderItem.jsx
+│
+├── data
+│   └── menu.js
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+---
+
+# 🧩 Component Overview
+
+| Component | Description |
+|-----------|-------------|
+| Header | Displays application title and theme toggle |
+| ThemeToggle | Switches between light and dark mode |
+| MenuList | Displays available food items |
+| FoodCard | Individual menu item with add-to-order button |
+| OrderSummary | Shows current order and total price |
+| OrderItem | Displays ordered item with quantity controls |
+
+---
+
+# 🎨 UI Layout
+
+The UI is built using the **Bootstrap grid system**.
+
+```
+Header (Theme Toggle)
+----------------------
+
+Menu Items
+[ Burger ] [ Pizza ] [ Fries ]
+
+Order Summary
+----------------------
+Items + Quantity Controls
+Total Price
+```
+
+---
+
+# 📚 Learning Goals
+
+This project demonstrates important React fundamentals:
+
+- React **state management**
+- **Props communication**
+- **Event handling**
+- Dynamic UI rendering
+- **Component architecture**
+- Responsive design using **Bootstrap**
+
+---
+
+# 🚧 Possible Improvements
+
+Future features that could be added:
+
+- Food item images
+- Animations and transitions
+- Order persistence with **localStorage**
+- Mobile-first UI improvements
+- Checkout functionality
+- Backend API integration
+
+---
+
+# 👨‍💻 Author
+
+**Roman Vanoyan**
+
+Developer / Student Project
+
+---
+
+# 📄 License
+
+This project is created for **educational purposes**.
