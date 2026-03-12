@@ -1,13 +1,19 @@
 import { useState } from 'react'
-
+import Header from './components/Header';
+import FoodCard from './components/FoodCard';
 
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
     <div className="container mt-4">
-      <>
+        
+      <div className={darkMode ? "bg-dark text-light min-vh-100" : "bg-light text-dark min-vh-100"}>
+        <div className="container py-4">
+          <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+        </div>
+       
         {/* Row 1 */}
         <div className="row mb-3">
           <div className="col border p-3"> Header/ Theme Toggle</div>
@@ -16,9 +22,27 @@ function App() {
         </div>
         {/* Row 2 */}
         <div className="row mb-3">
-          <div className="col border p-3">Burger Card</div>
-          <div className="col border p-3">Pizza Card</div>
-          <div className="col border p-3">Fries Card</div>
+          <div className="col border p-3">
+            <FoodCard 
+              title="Burger" 
+              description="A delicious burger with fresh ingredients" 
+              price={50} 
+            />
+          </div>
+          <div className="col border p-3">
+            <FoodCard 
+              title="Pizza" 
+              description="Cheesy pizza with your favorite toppings" 
+              price={110} 
+            />
+          </div>
+          <div className="col border p-3">
+            <FoodCard 
+              title="Fries" 
+              description="Crispy fries served hot" 
+              price={35} 
+            />
+          </div>
         </div>
         {/* Row 3 */}
         <div className="row mb-3">
@@ -33,7 +57,7 @@ function App() {
           <div className="col border p-3"></div>
           <div className="col border p-3"></div>
         </div>
-      </>
+        </div>
     </div>
   );
 }
