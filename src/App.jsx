@@ -1,65 +1,89 @@
-import { useState } from 'react'
-import Header from './components/Header';
-import FoodCard from './components/FoodCard';
-
+import { useState } from "react";
+import Header from "./components/Header";
+import MenuList from "./components/MenuList";
+import OrderSummary from "./components/OrderSummary";
+import menu from "./data/menu";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [order, setOrder] = useState([]);
+
+  const addToOrder = (item) => {
+    setOrder((prevOrder) => {
+      const existingItem = prevOrder.find(
+        (orderItem) => orderItem.id === item.id
+      );
+
+      if (existingItem) {
+        return prevOrder.map((orderItem) =>
+          orderItem.id === item.id
+            ? {
+                ...orderItem,
+                quantity: orderItem.quantity + 1,
+              }
+            : orderItem
+        );
+      }
+
+      return [
+        ...prevOrder,
+        {
+          ...item,
+          quantity: 1,
+        },
+      ];
+    });
+  };
+
+  const increaseQuantity = (id) => {
+    setOrder((prevOrder) =>
+      prevOrder.map((item) =>
+        item.id === id
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+            }
+          : item
+      )
+    );
+  };
+
+  const decreaseQuantity = (id) => {
+    setOrder((prevOrder) =>
+      prevOrder
+        .map((item) =>
+          item.id === id
+            ? {
+                ...item,
+                quantity: item.quantity - 1,
+              }
+            : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
+  };
 
   return (
-    <div className="container mt-4">
-        
-      <div className={darkMode ? "bg-dark text-light min-vh-100" : "bg-light text-dark min-vh-100"}>
-        <div className="container py-4">
-          <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-        </div>
-       
-        {/* Row 1 */}
-        <div className="row mb-3">
-          <div className="col border p-3"> Header/ Theme Toggle</div>
-          <div className="col border p-3"></div>
-          <div className="col border p-3"></div>
-        </div>
-        {/* Row 2 */}
-        <div className="row mb-3">
-          <div className="col border p-3">
-            <FoodCard 
-              title="Burger" 
-              description="A delicious burger with fresh ingredients" 
-              price={50} 
-            />
-          </div>
-          <div className="col border p-3">
-            <FoodCard 
-              title="Pizza" 
-              description="Cheesy pizza with your favorite toppings" 
-              price={110} 
-            />
-          </div>
-          <div className="col border p-3">
-            <FoodCard 
-              title="Fries" 
-              description="Crispy fries served hot" 
-              price={35} 
-            />
-          </div>
-        </div>
-        {/* Row 3 */}
-        <div className="row mb-3">
-          <div className="col border p-3">Order Summary</div>
-          <div className="col border p-3"></div>
-          <div className="col border p-3"></div>
-        </div>
-        {/* Row 4 */}
-        <div className="row mb-3">
-        <div className="col border p-3">Footer</div>{" "}
-          <div className="col border p-3">Total Price</div>
-          <div className="col border p-3"></div>
-          <div className="col border p-3"></div>
-        </div>
-        </div>
+    <div
+      className={
+        darkMode
+          ? "bg-dark text-light min-vh-100"
+          : "bg-light text-dark min-vh-100"
+      }
+    >
+      <div className="container py-4">
+        <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+
+        <MenuList items={menu} onAddToOrder={addToOrder} />
+
+        <OrderSummary
+          order={order}
+          onIncrease={increaseQuantity}
+          onDecrease={decreaseQuantity}
+        />
+      </div>
     </div>
   );
 }
 
-export default App
+export default App;
