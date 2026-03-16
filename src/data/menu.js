@@ -1,6 +1,7 @@
 import burgerImg from "../assets/images/burger.png";
 import pizzaImg from "../assets/images/pizza.png";
 import friesImg from "../assets/images/fries.png";
+import hotdogImg from "../assets/images/hotdog.png";
 
 
 const menu = [
@@ -24,6 +25,14 @@ const menu = [
     description: "Crispy golden fries served hot and fresh.",
     price: 35,
     image: friesImg,
+  },
+
+  {
+    id: 4,
+    title: "Hotdogs",
+    description: "Crispy hotdogs served hot and fresh.",
+    price: 30,
+    image: hotdogImg,
   },
 ];
 

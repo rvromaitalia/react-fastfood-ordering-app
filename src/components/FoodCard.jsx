@@ -17,7 +17,8 @@ function FoodCard({ id, title, description, price, image, onAddToOrder }) {
           className="card-img-top"
           style={{
             height: "220px",
-            objectFit: "cover"
+            objectFit: "cover",
+            width: "100%"
           }}
         />
       <div className="card-body d-flex flex-column">
